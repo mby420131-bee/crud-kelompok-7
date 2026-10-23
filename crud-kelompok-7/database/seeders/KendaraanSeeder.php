@@ -12,6 +12,15 @@ class KendaraanSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        \App\Models\Kendaraan::create([
+            'nomor_polisi' => 'A1234BC',
+            'merek' => 'BMW',
+            'tipe' => 'M4',
+            'kategori' => 'HYPER CAR',
+            'tahun' => 2023,
+            'warna' => 'Silver'
+        ]);
+
+        \App\Models\Kendaraan::factory(20)->create();
     }
 }

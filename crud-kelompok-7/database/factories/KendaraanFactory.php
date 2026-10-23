@@ -18,7 +18,12 @@ class KendaraanFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'nomor_polisi' => fake()->unique()->regexify('[A-Z]{1}[0-9]{4}[A-Z]{2}'),
+            'merek' => fake()->words(1, true),
+            'tipe' => fake()->words(1, true),
+            'kategori' => fake()->words(2, true),
+            'tahun' => fake()->numberBetween(1000, 2100),
+            'warna' => fake()->safeColorName()
         ];
     }
 }

@@ -1,3 +1,5 @@
+@extends('layouts.main')
+@section('content')
 <h1>Detail Kendaraan</h1>
 
 <p>
@@ -13,7 +15,8 @@
 </p>
 
 <p>
-    <a href="{{ route('kendaraan.index') }}">
+    <a href="{{ route('kendaraan.index') }}" class="btn btn-outline-info btn-md">
         Kembali
     </a>
 </p>
+@endsection

@@ -2,10 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KendaraanController;
+use App\Models\Kendaraan;
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    $kendaraans = Kendaraan::latest('id')->paginate(4);
+
+    return view('dashboard', compact('kendaraans'));
+})->name('dashboard');
 
 Route::resource('kendaraan',
 KendaraanController::class);

@@ -1,7 +1,9 @@
+@extends('layouts.main')
+@section('content')
 <h1>Manajemen Kendaraan</h1>
 
 <p>
-    <a href="{{ route('kendaraan.create') }}">
+    <a href="{{ route('kendaraan.create') }}" class="btn btn-primary btn-md">
         Tambah Data Kendaraan
     </a>
 </p>
@@ -12,7 +14,8 @@
 </p>
 @endsession
 
-<table border="1" cellingpadding="5">
+
+<table class="table table-bordered table-hover">
     <thead>
         <tr>
             <th>ID</th>
@@ -36,16 +39,16 @@
             <td>{{ $kendaraan->tahun }}</td>
             <td>{{ $kendaraan->kategori }}</td>
             <td>
-                <a href="{{ route('kendaraan.show', $kendaraan->id) }}">
+                <a href="{{ route('kendaraan.show', $kendaraan->id) }}" class="btn btn-outline-info btn-sm">
                     Lihat Detail
                 </a>
-                <a href="{{ route('kendaraan.edit', $kendaraan->id) }}">
+                <a href="{{ route('kendaraan.edit', $kendaraan->id) }}" class="btn btn-outline-warning btn-sm">
                     Edit
                 </a>
                 <form action="{{ route('kendaraan.destroy', $kendaraan->id) }}" method="post" style="display:inline;">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" 
+                    <button type="submit"  class="btn btn-danger btn-sm"
                         onclick="return confirm('Apakah Anda yakin ingin mengahpus Data Kendaraan ini ?')">
                             Hapus
                     </button>
@@ -59,3 +62,4 @@
         @endforelse
     </tbody>
 </table>
+@endsection

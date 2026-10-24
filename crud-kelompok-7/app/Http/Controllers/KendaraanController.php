@@ -37,7 +37,7 @@ class KendaraanController extends Controller
      */
     public function show(Kendaraan $kendaraan)
     {
-        //
+        return view('kendaraan.show', compact('kendaraan'));
     }
 
     /**

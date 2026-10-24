@@ -1,5 +1,16 @@
 <h1>Manajemen Kendaraan</h1>
 
+<p>
+    <a href="{{ route('kendaraan.create') }}">
+        Tambah Data Kendaraan
+    </a>
+</p>
+
+@session('success')
+<p style="color: green;">
+    {{ session('success') }}
+</p>
+@endsession
 
 <table border="1" cellingpadding="5">
     <thead>

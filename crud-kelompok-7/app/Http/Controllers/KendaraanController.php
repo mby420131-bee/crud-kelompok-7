@@ -21,7 +21,7 @@ class KendaraanController extends Controller
      */
     public function create()
     {
-        //
+        return view('kendaraan.create');
     }
 
     /**
@@ -29,7 +29,10 @@ class KendaraanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Kendaraan::create($request->all());
+
+        return redirect()->route('kendaraan.index')
+        ->with('success', 'Data Kendaraan berhasil ditambahkan');
     }
 
     /**

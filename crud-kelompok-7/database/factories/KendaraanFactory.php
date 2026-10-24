@@ -22,7 +22,7 @@ class KendaraanFactory extends Factory
             'merek' => fake()->words(1, true),
             'tipe' => fake()->words(1, true),
             'kategori' => fake()->words(2, true),
-            'tahun' => fake()->numberBetween(1000, 2100),
+            'tahun' => fake()->numberBetween(1000, 2026),
             'warna' => fake()->safeColorName()
         ];
     }

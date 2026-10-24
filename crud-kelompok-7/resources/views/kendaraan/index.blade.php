@@ -42,6 +42,14 @@
                 <a href="{{ route('kendaraan.edit', $kendaraan->id) }}">
                     Edit
                 </a>
+                <form action="{{ route('kendaraan.destroy', $kendaraan->id) }}" method="post" style="display:inline;">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" 
+                        onclick="return confirm('Apakah Anda yakin ingin mengahpus Data Kendaraan ini ?')">
+                            Hapus
+                    </button>
+                </form>
             </td>
         </tr>
         @empty

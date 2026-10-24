@@ -67,6 +67,9 @@ class KendaraanController extends Controller
      */
     public function destroy(Kendaraan $kendaraan)
     {
-        //
+        $kendaraan->delete();
+
+        return redirect()->route('kendaraan.index')
+        ->with('success','Data Kendaraan berhasil dihapus.');
     }
 }

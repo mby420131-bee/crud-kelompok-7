@@ -39,6 +39,9 @@
                 <a href="{{ route('kendaraan.show', $kendaraan->id) }}">
                     Lihat Detail
                 </a>
+                <a href="{{ route('kendaraan.edit', $kendaraan->id) }}">
+                    Edit
+                </a>
             </td>
         </tr>
         @empty
